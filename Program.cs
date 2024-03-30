@@ -20,49 +20,41 @@
                 produtoFinal = Convert.ToDouble(Console.ReadLine());
                 simboloMatematico = (Console.ReadLine());
 
-                if (simboloMatematico != "=")
+                if (simboloMatematico == "+")
                 {
-                    do
-                    {
-                        if (simboloMatematico == "+")
-                        {
-                            segundoNumero = Convert.ToDouble(Console.ReadLine());
-                            produtoFinal += segundoNumero;
-                        }
-                        else if (simboloMatematico == "-")
-                        {
-                            segundoNumero = Convert.ToDouble(Console.ReadLine());
-                            produtoFinal -= segundoNumero;
-                        }
-                        else if (simboloMatematico == "*")
-                        {
-                            segundoNumero = Convert.ToDouble(Console.ReadLine());
-                            produtoFinal *= segundoNumero;
-                        }
-                        else if (simboloMatematico == "/")
-                        {
-                            segundoNumero = Convert.ToDouble(Console.ReadLine());
-
-                            if (segundoNumero == 0)
-                            {
-                                do
-                                {
-                                    Console.WriteLine("Proibido usar o zero como divisor, tente outro número.");
-                                    segundoNumero = Convert.ToDouble(Console.ReadLine());
-                                
-                                } while (segundoNumero == 0);
-                            }
-                            produtoFinal /= segundoNumero;
-                        }
-                        else if (simboloMatematico != "=")
-                        {
-                            Console.WriteLine("Erro, tente novamente.");
-                        }
-
-                        simboloMatematico = Console.ReadLine();
-
-                    } while (simboloMatematico != "=");
+                    segundoNumero = Convert.ToDouble(Console.ReadLine());
+                    produtoFinal += segundoNumero;
                 }
+                else if (simboloMatematico == "-")
+                {
+                    segundoNumero = Convert.ToDouble(Console.ReadLine());
+                    produtoFinal -= segundoNumero;
+                }
+                else if (simboloMatematico == "*")
+                {
+                    segundoNumero = Convert.ToDouble(Console.ReadLine());
+                    produtoFinal *= segundoNumero;
+                }
+                else if (simboloMatematico == "/")
+                {
+                    segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                    if (segundoNumero == 0)
+                    {
+                        do
+                        {
+                            Console.WriteLine("Proibido usar o zero como divisor, tente outro número.");
+                            segundoNumero = Convert.ToDouble(Console.ReadLine());
+
+                        } while (segundoNumero == 0);
+                    }
+                    produtoFinal /= segundoNumero;
+                }
+                else if (simboloMatematico != "=")
+                {
+                    Console.WriteLine("Erro, tente novamente.");
+                }
+
                 Console.WriteLine($"Resultado = {produtoFinal}.");
                 Console.WriteLine("Deseja fazer outro cálculo? sim/nao");
                 repetirCalculo = Console.ReadLine();
